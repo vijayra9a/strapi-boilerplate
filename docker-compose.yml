@@ -1,0 +1,21 @@
+# docker-compose.yml
+services:
+  strapi:
+    container_name: strapi_app
+    # Build the image using the Dockerfile in the current directory
+    build: .
+    # Use the 'develop' command to enable live-reloading
+    command: npm run develop
+    restart: unless-stopped
+    # Load the environment variables from the .env file
+    env_file: .env
+    volumes:
+      # Mounts the project directory for live code changes
+      - .:/opt/app
+      # This prevents the local node_modules from overwriting the container's
+      - /opt/app/node_modules
+      # This saves your SQLite database file to your local machine
+      - ./.tmp:/opt/app/.tmp
+    ports:
+      # Map port 1337 on your machine to port 1337 in the container
+      - "1337:1337"
