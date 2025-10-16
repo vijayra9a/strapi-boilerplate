@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "SEO",
+    "description": "SEO meta information for search engines and social media",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "metaTitle": {
+      "type": "string",
+      "required": true,
+      "maxLength": 60,
+      "minLength": 5
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": true,
+      "maxLength": 160,
+      "minLength": 50
+    },
+    "metaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "keywords": {
+      "type": "text",
+      "required": false
+    },
+    "metaRobots": {
+      "type": "string",
+      "required": false,
+      "default": "index, follow"
+    },
+    "structuredData": {
+      "type": "json",
+      "required": false
+    },
+    "metaViewport": {
+      "type": "string",
+      "required": false,
+      "default": "width=device-width, initial-scale=1"
+    },
+    "canonicalURL": {
+      "type": "string",
+      "required": false
+    },
+    "metaSocial": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.meta-social"
+    }
+  }
+}

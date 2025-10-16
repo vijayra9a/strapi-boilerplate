@@ -2,6 +2,11 @@
 
 # === Environment Variables ===
 .env
+.env.local
+.env.production
+.env.staging
+.env.test
+env.example
 
 # === Strapi Specific ===
 /build
@@ -15,20 +20,66 @@
 # Locally uploaded media files. In production, you should use a cloud provider.
 /public/uploads
 
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
 # === Logs ===
 *.log
 npm-debug.log*
 yarn-error.log*
 yarn-debug.log*
+pnpm-debug.log*
 
-# macOS generated files
+# === OS Generated Files ===
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# Windows thumbnail cache
+# Windows
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# VSCode editor configuration
+# === Editor Configuration ===
+# VSCode
 .vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# JetBrains (WebStorm, IntelliJ) IDE configuration
+# JetBrains (WebStorm, IntelliJ)
 .idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# === Package Manager ===
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# === Docker ===
+.dockerignore
+
+# === Cache ===
+.cache/
+.parcel-cache/
+.eslintcache
+
+# === Testing ===
+coverage/
+.nyc_output/
+
+# === Misc ===
+.strapi-updater.json
+*.tsbuildinfo
